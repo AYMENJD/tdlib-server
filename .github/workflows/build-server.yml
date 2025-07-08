@@ -55,7 +55,7 @@ jobs:
           CC=/opt/rh/devtoolset-9/root/usr/bin/gcc CXX=/opt/rh/devtoolset-9/root/usr/bin/g++ cmake -DOPENSSL_USE_STATIC_LIBS=TRUE -DZLIB_USE_STATIC_LIBS=TRUE -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr/local ..
           cmake --build . --target install -j$(($(nproc) + 1)) || exit 1
           ls -l /usr/local
-          cd .. && rm -rf td
+          cd ../.. && rm -rf td
           ldconfig
 
           curl -OL https://go.dev/dl/go1.21.0.linux-amd64.tar.gz
