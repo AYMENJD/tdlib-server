@@ -142,7 +142,7 @@ func updateServer(c *cli.Context) error {
 		return fmt.Errorf("failed to calculate current binary hash: %v", err)
 	}
 
-	resp, err := http.Get("https://api.github.com/repos/pytdbot/tdlib-server/releases/latest")
+	resp, err := http.Get("https://api.github.com/repos/AYMENJD/tdlib-server/releases/latest")
 	if err != nil {
 		return fmt.Errorf("failed to check for updates: %v", err)
 	}
@@ -251,3 +251,4 @@ func calculateFileSHA256(filePath string) (string, error) {
 
 	return "sha256:" + hex.EncodeToString(hasher.Sum(nil)), nil
 }
+
